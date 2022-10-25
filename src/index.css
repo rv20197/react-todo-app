@@ -1,0 +1,80 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  margin: 0 1rem;
+}
+
+.nav-list .menu-items {
+  margin-left: auto;
+}
+
+.nav-list .menu-items a {
+  margin: 0 0.25rem;
+  text-decoration: none;
+  padding: 0.5rem;
+  border-radius: 4px;
+  color: #555;
+}
+
+.nav-list .menu-items a:hover {
+  background-color: #8542fb;
+  color: white;
+}
+
+.nav-list .menu-items a.active {
+  background: #8542fb;
+  color: white;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 0.5rem;
+  border-radius: 4px;
+  background-color: #8542fb;
+  color: white;
+  border: 1px solid #8542fb;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.btn:hover {
+  background-color: #7122f9;
+}
+
+.add-form {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem 0;
+}
+
+.form-control label {
+  margin-bottom: 0.25rem;
+}
+
+.form-control input, .form-control textarea {
+  flex: 1;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.5rem;
+}
