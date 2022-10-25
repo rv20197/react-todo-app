@@ -2,7 +2,7 @@
 	"name": "todo-app",
 	"version": "0.1.0",
 	"private": true,
-	"homepage": "https://rv20197.github.io",
+	"homepage": "https://rv20197.github.io/react-todo-app/",
 	"dependencies": {
 		"@reduxjs/toolkit": "^1.8.6",
 		"@testing-library/jest-dom": "^5.16.5",
