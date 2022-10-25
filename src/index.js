@@ -14,48 +14,52 @@ import Protected from './components/Protected';
 import Login from './features/users/Login';
 
 const Todo = React.lazy(() => import('./features/todos/Todo'));
-
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+	[
+		{
+			path: '',
+			element: <App />,
+			errorElement: <ErrorPage />,
+			children: [
+				{
+					index: true,
+					element: <Todos />
+				},
+				{
+					path: '/todos',
+					element: <Todos />
+				},
+				{
+					path: '/add-todo',
+					element: (
+						<Protected>
+							<AddTodo />
+						</Protected>
+					)
+				},
+				{
+					path: '/todos/:id',
+					element: (
+						<React.Suspense fallback={<>Loading...</>}>
+							<Todo />
+						</React.Suspense>
+					)
+				},
+				{
+					path: '/counter',
+					element: <Counter />
+				},
+				{
+					path: '/login',
+					element: <Login />
+				}
+			]
+		}
+	],
 	{
-		path: process.env.PUBLIC_URL,
-		element: <App />,
-		errorElement: <ErrorPage />,
-		children: [
-			{
-				index: true,
-				element: <Todos />
-			},
-			{
-				path: '/todos',
-				element: <Todos />
-			},
-			{
-				path: '/add-todo',
-				element: (
-					<Protected>
-						<AddTodo />
-					</Protected>
-				)
-			},
-			{
-				path: '/todos/:id',
-				element: (
-					<React.Suspense fallback={<>Loading...</>}>
-						<Todo />
-					</React.Suspense>
-				)
-			},
-			{
-				path: '/counter',
-				element: <Counter />
-			},
-			{
-				path: '/login',
-				element: <Login />
-			}
-		]
+		basename: process.env.PUBLIC_URL
 	}
-]);
+);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
